@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Q22/IntegerToEH&apos; to &apos;IntegerToEHcpp&apos;" description="Rename resource &apos;IntegerToEH&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="IntegerToEH" name="IntegerToEHcpp" stamp="1476875626483" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Q22/IntegerToEHcpp&apos; to &apos;IntegerToEH.cpp&apos;" description="Rename resource &apos;IntegerToEHcpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="IntegerToEHcpp" name="IntegerToEH.cpp" stamp="1476875634123" updateReferences="true"/>
+</session>

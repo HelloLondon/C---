@@ -3573,3 +3573,11 @@ java.net.SocketTimeoutException: Read timed out
 
 !ENTRY org.eclipse.cdt.core 1 0 2016-10-19 19:10:05.704
 !MESSAGE Indexed 'Q21' (0 sources, 0 headers) in 0 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)
+
+!ENTRY org.eclipse.core.resources 2 2 2016-10-19 19:13:04.406
+!MESSAGE Save operation warnings.
+!SUBENTRY 1 org.eclipse.core.resources 2 234 2016-10-19 19:13:04.406
+!MESSAGE The project description file (.project) for 'RemoteSystemsTempFiles' was missing.  This file contains important information about the project.  A new project description file has been created, but some information about the project may have been lost.
+
+!ENTRY org.eclipse.cdt.core 1 0 2016-10-19 19:13:04.420
+!MESSAGE Indexed 'Q22' (0 sources, 0 headers) in 0.001 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0%)

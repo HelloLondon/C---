@@ -1,0 +1,7 @@
+19:18:07 **** Incremental Build of configuration Debug for project Q22 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o IntegerToEH.o "..\\IntegerToEH.cpp" 
+g++ -o Q22.exe IntegerToEH.o 
+
+19:18:08 Build Finished (took 789ms)
+
