@@ -1,0 +1,7 @@
+19:04:41 **** Rebuild of configuration Debug for project Q13 ****
+Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o NumTable.o "..\\NumTable.cpp" 
+g++ -o Q13.exe NumTable.o 
+
+19:04:42 Build Finished (took 812ms)
+

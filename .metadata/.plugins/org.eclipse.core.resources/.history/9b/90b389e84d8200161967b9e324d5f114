@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+
+	for(int i = 1; i < 10; i ++) {
+		int offset = i - (i / 3) * 3;
+		switch (offset) {
+			case 0:
+				printf("整除3");
+				break;
+			case 1:
+				printf("模3余1");
+				break;
+			case 2:
+				printf("模3余2");
+				break;
+			default :break;
+		}
+	}
+	return 0;
+}

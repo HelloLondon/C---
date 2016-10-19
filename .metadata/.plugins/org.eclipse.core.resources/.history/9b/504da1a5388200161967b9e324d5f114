@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main() {
+	int a,b;
+	int a2;
+	int a3 = 0;
+	float c;
+	double d;
+	long  e;
+	short f;
+	return 0;
+}

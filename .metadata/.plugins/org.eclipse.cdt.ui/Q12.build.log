@@ -1,0 +1,7 @@
+19:04:41 **** Rebuild of configuration Release for project Q12 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o Binary.o "..\\Binary.cpp" 
+g++ -o Q12.exe Binary.o 
+
+19:04:41 Build Finished (took 778ms)
+

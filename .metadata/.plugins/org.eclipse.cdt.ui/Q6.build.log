@@ -1,0 +1,7 @@
+19:04:44 **** Rebuild of configuration Release for project Q6 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o Calculate.o "..\\Calculate.cpp" 
+g++ -o Q6.exe Calculate.o 
+
+19:04:45 Build Finished (took 607ms)
+

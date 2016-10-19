@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q7/FindMin&apos; to &apos;FindMin.cpp&apos;" description="Rename resource &apos;FindMin&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="FindMin" name="FindMin.cpp" stamp="1474701914002" updateReferences="true"/>
+</session>

@@ -1,0 +1,7 @@
+19:04:46 **** Rebuild of configuration Release for project Q8 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o PrintfNums.o "..\\PrintfNums.cpp" 
+g++ -o Q8.exe PrintfNums.o 
+
+19:04:47 Build Finished (took 849ms)
+

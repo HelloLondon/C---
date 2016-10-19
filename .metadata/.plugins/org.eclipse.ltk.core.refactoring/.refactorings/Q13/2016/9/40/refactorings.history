@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q13/NumTable&apos; to &apos;NumTable.cpp&apos;" description="Rename resource &apos;NumTable&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="NumTable" name="NumTable.cpp" stamp="1474773793968" updateReferences="true"/>
+</session>

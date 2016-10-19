@@ -1,0 +1,7 @@
+19:04:47 **** Rebuild of configuration Release for project Q9 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o CalSum.o "..\\CalSum.cpp" 
+g++ -o Q9.exe CalSum.o 
+
+19:04:47 Build Finished (took 717ms)
+

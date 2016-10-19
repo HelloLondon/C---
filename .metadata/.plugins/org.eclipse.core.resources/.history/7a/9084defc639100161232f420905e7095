@@ -1,0 +1,31 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+inline list<int> adjust (int data[], int n){
+	list<int> zeros;
+	list<int> unZeros;
+	for (int i = 0; i < n ; i ++) {
+		if (data[i] == 0) {
+			zeros.push_back(data[i]);
+		}else {
+			unZeros.push_back(data[i]);
+		}
+	}
+	list<int> result(unZeros,zeros);
+	return result;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	int data[n];
+	for (int i = 0; i < n; i ++) {
+		cin >> data[i];
+	}
+	list<int> afterA = adjust(data,n);
+	for (afterA::iterator i = afterA.begin(); i != afterA.end(); i ++) {
+		cout << *i << " ";
+	}
+}
+

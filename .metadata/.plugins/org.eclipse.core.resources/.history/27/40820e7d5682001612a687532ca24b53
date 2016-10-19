@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+void changeByValue (int numA, int numB) {
+	numA = 4;
+	numB = 4;
+}
+
+void changeByPtr (int* ptrA, int* ptrB) {
+	*ptrA = 4;
+	*ptrB = 4;
+}
+
+int main() {
+
+	int A = 1;
+	int B = 2;
+	changeByValue(A,B);
+	printf("A is %d, B is %d", A, B);
+	changeByPtr(&A,&B);
+	printf("A is %d, B is %d", A, B);
+	return 0;
+}
+
+
+

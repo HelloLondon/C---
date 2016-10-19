@@ -1,0 +1,45 @@
+#include<iostream>
+#include<stdio.h>
+
+struct dataheader{
+    int size;
+    int x,y;
+}
+
+struct ADataImpl{
+   dataheader head;
+   int z,w;
+};
+
+struct Adata{
+      union{
+      dataheader head;
+      AdtatImpl a;
+      };
+};
+
+void func(struct dataheader *head);
+void func_AData(struct dataheader *head);
+
+struct dataheader *head=malloc (sizeof(AData));
+typedef void (*Func_Calc)(struct dataheader *head);
+
+Func_Calc f[10];
+void InstallFunc(struct dataheader *head,Func_Calc &f)
+{
+  if(head->size ==sizeof(dataheader))
+      f = func;
+  else f = func_AData;
+}
+int main()
+{
+   struct dataheader d;
+   struct Adata a ;
+
+   struct dataheader *p[10]={&d,&a};
+   for(i=0;i<2;i++)
+      InstallFunc(p+i,f+i);
+   for(i=0;i<2;i++)
+         f[i](p+i);
+return 0;
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q12/Binary&apos; to &apos;Binary.cpp&apos;" description="Rename resource &apos;Binary&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Binary" name="Binary.cpp" stamp="1474772075607" updateReferences="true"/>
+</session>

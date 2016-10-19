@@ -1,0 +1,7 @@
+19:04:45 **** Rebuild of configuration Release for project Q7 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o FindMin.o "..\\FindMin.cpp" 
+g++ -o Q7.exe FindMin.o 
+
+19:04:46 Build Finished (took 794ms)
+

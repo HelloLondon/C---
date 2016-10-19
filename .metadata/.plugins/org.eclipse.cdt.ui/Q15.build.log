@@ -1,0 +1,7 @@
+15:16:48 **** Incremental Build of configuration Release for project Q15 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o MaxNum.o "..\\MaxNum.cpp" 
+g++ -o Q15.exe MaxNum.o 
+
+15:16:48 Build Finished (took 703ms)
+

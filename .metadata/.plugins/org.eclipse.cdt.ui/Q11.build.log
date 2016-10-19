@@ -1,0 +1,7 @@
+19:04:40 **** Rebuild of configuration Release for project Q11 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o Sort.o "..\\Sort.cpp" 
+g++ -o Q11.exe Sort.o 
+
+19:04:40 Build Finished (took 604ms)
+

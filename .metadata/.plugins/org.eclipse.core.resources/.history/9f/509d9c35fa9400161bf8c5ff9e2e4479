@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main () {
+	int n ;
+	cin >> n;
+	int data = 0;
+	cin >> data;
+	long maxSum = data;
+	long curSum = data;
+	for (int i = 1; i < n ; i ++) {
+		cin >> data;
+		curSum += data;
+		if (curSum < 0) {
+			curSum = data;
+		}
+		if (curSum > maxSum) {
+			maxSum = curSum;
+		}
+	}
+	cout << maxSum;
+}

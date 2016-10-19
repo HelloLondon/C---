@@ -1,0 +1,7 @@
+19:04:39 **** Rebuild of configuration Release for project Q10 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o Fib.o "..\\Fib.cpp" 
+g++ -o Q10.exe Fib.o 
+
+19:04:40 Build Finished (took 902ms)
+

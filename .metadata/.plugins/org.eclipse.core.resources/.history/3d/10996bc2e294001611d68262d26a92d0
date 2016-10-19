@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct TStudent {
+	char name[20];
+	int age;
+};
+
+int compare (const TStudent*elem1,const TStudent*elem2) {
+	return strcmp(elem1->name,elem2->name);
+}
+
+int main() {
+	const int c = 128;
+	int *q = const_cast<int *>(&c);
+	*q = 111;
+	cout << "c" << &c << c << endl;
+	cout << "q" << &q << q << endl;
+	cout << "*q" << q << *q << endl;
+	return 0;
+}
+
+
+
+
