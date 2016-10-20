@@ -1,0 +1,7 @@
+21:28:18 **** Incremental Build of configuration Release for project Q21 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o Palindromes.o "..\\Palindromes.cpp" 
+g++ -o Q21.exe Palindromes.o 
+
+21:28:19 Build Finished (took 748ms)
+

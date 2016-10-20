@@ -1,9 +1,0 @@
-#include<iostream>
-
-int main() {
-	int *p = 0x6666666;
-	int *p = (int *) 0x66666666;
-	cout << *p << endl;
-
-	return 0;
-}

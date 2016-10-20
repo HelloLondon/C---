@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+bool palindrome (char data[], int start, int end) {
+	for (;;) {
+		if (start == end) {
+			return true;
+		}
+		if(data[start] != data[end]) {
+			return false;
+		}
+		start ++;
+		end --;
+	}
+}
+
+int main() {
+	int num;
+	cin >> num;
+	char data[num + 1];
+	data[num] = '\0';
+	for(int i = 0; i < num; i ++) {
+		cin >> data[i];
+	}
+	int max = 1;
+	for (int i = 0 ; i < num ; i ++) {
+		for (int j = num ; j > i ; j ++) {
+			if (palindrome(data,i,j)) {
+				if (max < j - i + 1) {
+					max = j - i + 1;
+				}
+			}
+		}
+	}
+	cout << max;
+	return 0;
+}

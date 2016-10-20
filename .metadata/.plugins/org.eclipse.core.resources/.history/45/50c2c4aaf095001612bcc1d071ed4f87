@@ -1,0 +1,18 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+const static string single[] = {" ","one","two","three","four","five","six","seven","eight","nine"};
+const static string tenToTwe[] = {" ","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+const static string tens[] = {" ","ten","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+const static string hundred = "hundred";
+const static string ad = "and";
+
+int main () {
+	int data;
+	cin >> data;
+	int hb = data / 100;
+	int tens = data - hb * 100;
+	int singles = tens - tens / 10 * 10;
+
+}

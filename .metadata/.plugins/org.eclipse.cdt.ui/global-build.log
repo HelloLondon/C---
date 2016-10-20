@@ -1,4 +1,5 @@
-19:18:07 **** Incremental Build of configuration Debug for project Q22 ****
+19:55:45 **** Incremental Build of configuration Release for project Q19 ****
 Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o IntegerToEH.o "..\\IntegerToEH.cpp" 
-g++ -o Q22.exe IntegerToEH.o 
+g++ -O3 -Wall -c -fmessage-length=0 -o MaxPro.o "..\\MaxPro.cpp" 
+g++ -o Q19.exe MaxPro.o 
+Info: Nothing to build for Q19

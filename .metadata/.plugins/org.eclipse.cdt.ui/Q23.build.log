@@ -1,8 +1,1 @@
-18:49:01 **** Incremental Build of configuration Release for project Q23 ****
-Info: Internal Builder is used for build
-g++ -O3 -Wall -c -fmessage-length=0 -o Q23.o "..\\Q23.cpp" 
-g++ -O3 -Wall -c -fmessage-length=0 -o Grades.o "..\\Grades.cpp" 
-g++ -o Q23.exe Grades.o Q23.o 
-
-18:49:03 Build Finished (took 1s.762ms)
-
+Info: Nothing to build for Q23
