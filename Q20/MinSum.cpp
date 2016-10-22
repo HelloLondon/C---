@@ -3,7 +3,7 @@
 using namespace std;
 
 int n,m;
-int data[14000];
+int data[100000];
 
 long search (long low, long high) {
 	while (low < high) {
@@ -52,7 +52,10 @@ int main () {
 		}
 		out << endl;
 	}
-
+	if (m > n) {
+		cout << max;
+		return 0;
+	}
 	cout << search(max,sum);
 }
 

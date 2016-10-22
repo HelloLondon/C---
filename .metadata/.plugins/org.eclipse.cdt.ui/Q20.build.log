@@ -1,1 +1,7 @@
-Info: Nothing to build for Q20
+19:31:54 **** Incremental Build of configuration Release for project Q20 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o MinSum.o "..\\MinSum.cpp" 
+g++ -o Q20.exe MinSum.o 
+
+19:31:55 Build Finished (took 770ms)
+

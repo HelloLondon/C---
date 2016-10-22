@@ -1,7 +1,11 @@
-12:43:15 **** Incremental Build of configuration Release for project Demo ****
+20:09:29 **** Incremental Build of configuration Release for project Demo ****
 Info: Internal Builder is used for build
-g++ -O3 -Wall -c -fmessage-length=0 -o Q15.o "..\\Q15.cpp" 
-g++ -o Demo.exe MaxNum.o Q15.o "src\\Test.o" 
+g++ -O3 -Wall -c -fmessage-length=0 -o "src\\Q19.o" "..\\src\\Q19.cpp" 
+..\src\Q19.cpp: In function 'int main()':
+..\src\Q19.cpp:9:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
+  int a=0;
+      ^
+g++ -o Demo.exe "src\\Q19.o" 
 
-12:43:15 Build Finished (took 800ms)
+20:09:30 Build Finished (took 707ms)
 

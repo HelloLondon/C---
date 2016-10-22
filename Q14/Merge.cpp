@@ -54,10 +54,17 @@ int main () {
 	cin >> m;
 	int nums1[m];
 	getInput(m,nums1);
+	bool is = true;
+	if ( m != 0) {
+		is = nums1[m - 1] >= nums1[0];
+	}
 	int n ;
 	cin >> n;
 	int nums2[n];
 	getInput(n, nums2);
+	if (m == 0) {
+		is = nums2[n - 1] >= nums2[0];
+	}
 	sort(nums1, m);
 	sort(nums2, n);
 //	for(int i = 0; i < m ; i ++) {
@@ -87,13 +94,22 @@ int main () {
 //	}
 //	sort(result,m+n);
 	merge(m,nums1,n,nums2,result);
-	int i ;
-	for (i = 0 ; i < m + n - 1; i ++) {
-		cout << result[i] << " ";
+	if (is ) {
+		int i ;
+			for (i = 0 ; i < m + n - 1; i ++) {
+				cout << result[i] << " ";
+			}
+			if (m >0 || n > 0){
+				cout << result[i];
+			}
+	} else {
+		int i ;
+					for (i =  m + n - 1 ; i > 0; i --) {
+						cout << result[i] << " ";
+					}
+					if (m >0 || n > 0){
+						cout << result[0];
+					}
 	}
-	if (m >0 || n > 0){
-		cout << result[i];
-	}
-
 	return 0;
 }
