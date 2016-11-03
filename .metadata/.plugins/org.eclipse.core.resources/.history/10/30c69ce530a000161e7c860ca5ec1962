@@ -1,0 +1,15 @@
+#include <iostream>
+#include "tree.h"
+using namespace std;
+
+void BinaryMake(int data[], int start, int end, BinarySearchTree *tree) {
+
+}
+
+int main() {
+	int data[10000];
+	int length = 0;
+	while(cin >> data[length]){length++;};
+
+}
+

@@ -1,0 +1,7 @@
+19:17:46 **** Rebuild of configuration Release for project Q27 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Q27.exe main.o 
+
+19:17:47 Build Finished (took 695ms)
+

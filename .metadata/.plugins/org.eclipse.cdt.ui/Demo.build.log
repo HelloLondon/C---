@@ -1,11 +1,10 @@
-20:09:29 **** Incremental Build of configuration Release for project Demo ****
+19:17:43 **** Incremental Build of configuration Debug for project Demo ****
 Info: Internal Builder is used for build
-g++ -O3 -Wall -c -fmessage-length=0 -o "src\\Q19.o" "..\\src\\Q19.cpp" 
-..\src\Q19.cpp: In function 'int main()':
-..\src\Q19.cpp:9:6: warning: variable 'a' set but not used [-Wunused-but-set-variable]
-  int a=0;
-      ^
-g++ -o Demo.exe "src\\Q19.o" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+..\main.cpp: In function 'int main()':
+..\main.cpp:20:1: error: expected type-specifier before '}' token
+ }
+ ^
 
-20:09:30 Build Finished (took 707ms)
+19:17:44 Build Finished (took 299ms)
 

@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstring>
+#include <string>
+using namespace std;
+
+struct Node {
+	int val;
+	Node *next;
+};
+
+void test (int &a, const int &b) {
+
+}
+
+int main(){
+//	int x = 1,y = 10;
+//	test(x, 10);
+	stirng str("asdsstr");
+}

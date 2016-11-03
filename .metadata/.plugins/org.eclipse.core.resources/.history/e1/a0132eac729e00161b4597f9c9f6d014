@@ -1,0 +1,53 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+long long getLastA(long long *people, long long length,long long start,int offset) {
+		long long result = start + offset ;
+		if(result >= length) {
+			result = result - length + 1;
+		}
+		long long count = length - 1;
+		do{
+//			people[0] = result;
+			people[result] = -1;
+			count --;
+			if (count == 0) {
+				break;
+			}
+			int i = 0;
+			for (;;) {
+				result ++;
+				if(result  >= length) {
+					result = 1;
+				}
+				if (people[result] > 0) {
+					i ++ ;
+				}
+				if (i == offset) {
+					break;
+				}
+			}
+		} while(true);
+		return result;
+}
+
+int main() {
+	long long n;
+	cin >> n;
+	long long start;
+	cin >> start;
+	long long people[n + 1];
+	ofstream out("D:\\C++Project\\Q34\\out.txt");
+	if (out.is_open())
+	    {
+	         out << "This is a line.\n";
+	         out << "This is another line.\n";
+	         out.close();
+	     }
+//	for(long i = 0; i <= n; i ++) {
+//		people[i] = i;
+//	}
+//	cout << getLastA(people, n + 1, start, 3) - 1;
+
+}

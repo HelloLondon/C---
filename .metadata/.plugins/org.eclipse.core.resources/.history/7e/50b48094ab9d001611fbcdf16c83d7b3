@@ -1,0 +1,10 @@
+#include <vector>
+
+class CircleList {
+public :
+	CircleList(vector<int> vector)：vector(vector) {}
+	~CircleList(){delete vector}
+private:
+	vector<int> vector;
+
+};

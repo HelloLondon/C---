@@ -1,0 +1,197 @@
+#include <iostream>
+#include <string>
+#include <istream>
+
+using namespace std;
+struct Matrix {
+	int row;
+	int col;
+	int *data;
+	Matrix(){
+		row = -1;
+		col = -1;
+		data = NULL;
+	}
+};
+void print(Matrix *matrix){
+		for(int i = 0; i < matrix->row*matrix->col; i ++) {
+			cout << *(matrix->data + i) << "  ";
+		}
+	}
+	bool flattern(Matrix *matrix){
+		return matrix->row==1&&matrix->col==1;
+	}
+	void add(Matrix *matrix,Matrix *added, Matrix *target) {
+		int *ad = added->data;
+//		int *td = new int[target->row * target->col];
+		int *td = target->data;
+		for(int i = 0;i <matrix->row*matrix->col; i ++) {
+			*(td + i) = *(ad + i) + *(matrix->data + i);
+		}
+		int *temp = target->data;
+		target->data = td;
+		if(temp != NULL) {
+			delete temp;
+		}
+	}
+	void multiply(Matrix *matrix,Matrix *muled, Matrix *target) {
+		int *ad = matrix->data;
+		int *md = muled->data;
+		int *td = new int[target->row * target->col];
+		for(int i = 0; i < target->row; i ++) {
+			for(int j = 0; j < target->col; j ++) {
+				for(int m = 0; m < matrix->row; m ++) {
+					cout << i<<" , "<<m<<" :  " << *(ad + i*matrix->col + m) << "   "<< m<<","<< j<<" :  " << *(md + j + m*muled->col) << endl;
+					*(td + i*target->col + j) = *(td + i*target->col + j) + ( (*(ad + i*matrix->col + m))*(*(md + j + m*muled->col)) );
+				}
+				cout <<"T "<< i << ", " << j << " :    " << *(td + i*target->col + j) << endl;
+			}
+		}
+		int *temp = target->data;
+		target->data = td;
+		if(temp != NULL) {
+			delete temp;
+		}
+	}
+void makeOperation(Matrix *,int *);
+
+void parseInput(int *matrix, int data[], int depth, int rAc[], int start, int end){
+	int row = rAc[0];
+	int col = rAc[1];
+//	cout << "Row :: " << row << "     Col :: " << col << endl;
+	if(depth == 1) {
+		//Fill it directly
+		for(int i = 0; i < row; i ++) {
+			for(int j = 0; j < col; j ++) {
+				*(matrix + i*col + j) = *(data + start + i * col + j);
+			}
+		}
+		return;
+	}
+	for(int i = 0; i < row; i ++) {
+		for(int j = 0; j < col; j ++) {
+			int length = (end - start + 1)/(row * col);
+			int offset = length * (i * col + j);
+			parseInput(matrix + offset, data, depth - 1, rAc + 2, start + offset, start + offset + length - 1);
+		}
+	}
+}
+
+int main(){
+	int count;
+	cin >> count;
+	if(count == 0) {
+		return 0;
+	}
+	Matrix *matrixs[10];
+	for(int i = 0; i < 10; i ++) {
+		matrixs[i] = new Matrix();
+	}
+	int depths[count];
+	int rAc[count][100];
+	int data[count][10000];
+	for(int i = 0; i < count ; i ++) {
+		int depth;
+		cin >> depth;
+		depths[i] = depth;
+		int row = 1,col = 1;
+		for(int j = 0; j < depth; j ++) {
+			int eR;
+			int eC;
+			cin >> eR >> eC;
+			row *= eR;
+			col *= eC;
+			rAc[i][j*2] = eR;
+			rAc[i][1 + j*2] = eC;
+		}
+		matrixs[i] = new Matrix();
+		matrixs[i]->row = row;
+		matrixs[i]->col = col;
+		matrixs[i]->data = new int[col*row];
+		for(int k = 0;k < row*col; k ++) {
+			cin >> data[i][k];
+		}
+	}
+	//构建矩阵
+	for(int i = 0; i < count; i ++) {
+		int end = (matrixs[i]->row)*(matrixs[i]->col) - 1;
+		parseInput(matrixs[i]->data, data[i], depths[i], rAc[i], 0, end);
+	}
+//	cout << "Read End";
+//	int opCount;
+//	cin >> opCount;
+	//解析操作符：
+	int opCount;
+	cin >> opCount;
+	int operation[opCount][4];
+	for(int i = 0; i < opCount ; i ++) {
+		cin >> operation[i][0];
+//		cout << operation[i][0]<<endl;
+		switch(operation[i][0]) {
+		case 0:
+			cin >> operation[i][1];
+			break;
+		case 1:
+			cin >> operation[i][1] ;
+			break;
+		case 2:
+			cin >> operation[i][1];
+			cin >> operation[i][2];
+			cin >> operation[i][3];
+			break;
+		case 3:
+			cin >> operation[i][1];
+			cin >> operation[i][2];
+			cin >> operation[i][3];
+			break;
+		default:
+			break;
+		}
+	}
+	for(int i = 0; i < opCount; i ++) {
+		Matrix *first,*second;
+		switch(operation[i][0]) {
+			case 0:
+				print(matrixs[operation[i][1]]);
+				cout << endl;
+				break;
+			case 1:
+				cout << flattern(matrixs[operation[i][1]]);
+				cout << endl;
+				break;
+			case 2:
+				first = matrixs[operation[i][1]];
+				second = matrixs[operation[i][2]];
+				matrixs[operation[i][3]]->row = first->row;
+				matrixs[operation[i][3]]->col = second->col;
+				if(matrixs[operation[i][3]]->data == NULL){
+						matrixs[operation[i][3]]->data = new int[first->row*second->col];
+				}
+//				cout << first->row << "   "<< second->col;
+//					cout << endl << size;
+				add(first,second, matrixs[operation[i][3]]);
+				break;
+			case 3:
+				first = matrixs[operation[i][1]];
+				second = matrixs[operation[i][2]];
+				matrixs[operation[i][3]]->row = first->row;
+				matrixs[operation[i][3]]->col = second->col;
+				if(matrixs[operation[i][3]]->data == NULL){
+					matrixs[operation[i][3]]->data = new int[first->row*second->col];
+				}
+				multiply(first,second, matrixs[operation[i][3]]);
+				break;
+			default:
+				break;
+			}
+	}
+	for(int i = 0; i < 10; i ++) {
+		if(matrixs[i] != NULL) {
+			if(matrixs[i]->data!=NULL){
+			delete matrixs[i]->data;
+			}
+		}
+		delete matrixs[i];
+	}
+}
+

@@ -1,0 +1,9 @@
+#include <iostream>
+#include "tree.h"
+using namespace std;
+
+int main() {
+	int data[10000];
+	int length = 0;
+	while(cin >> data[length ++])
+}

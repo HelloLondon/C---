@@ -1,0 +1,59 @@
+#include "list.h"
+using namespace std;
+
+LinkedList::LinkedList() {
+	start = new ListNode(-1);
+	last = start;
+	start->next = last;
+	size = 0;
+}
+
+
+LinkedList::~LinkedList() {
+	if(start == last) {
+		delete start;
+		return;
+	}
+	ListNode *first = start->next;
+	do{
+		if(first == last) {
+			break;
+		}
+		ListNode *temp = first->next;
+		delete first;
+		first = temp;
+	}while(true);
+	delete start;
+	delete last;
+}
+
+void LinkedList::add(int x) {
+	ListNode *update =  new ListNode(x);
+	last->next = update ;
+	last = update;
+	size ++;
+}
+int LinkedList::get(){
+	return last->val;
+}
+
+void LinkedList::remove(int value) {
+	if(size == 0) {
+		return;
+	}
+	for(ListNode*node = start; node != NULL; node = node->next) {
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+

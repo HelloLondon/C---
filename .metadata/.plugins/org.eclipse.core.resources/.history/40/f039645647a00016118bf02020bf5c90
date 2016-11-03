@@ -1,0 +1,58 @@
+#include "tree.h"
+#include <iostream>
+/*
+ * Get the height of tree by preorder
+ */
+int BinarySearchTree::height() {
+	int rightHight = 0;
+	int leftHight = 0;
+	if(leftTree != NULL) {
+		leftHight = leftTree->height();
+	}
+	if(rightTree != NULL) {
+		rightHight = rightTree->height();
+	}
+	return 1 + (rightHight > leftHight ?  rightHight : leftHight);
+}
+/*
+ * 递归是个复杂度为 2*(n + ------- + 1) ， O(n^2)的操作。
+ */
+bool BinarySearchTree::isHBTree() {
+	if(leftTree->height() ) {
+
+	}
+}
+
+void BinarySearchTree::add(int val) {
+	if(val >= root) {
+		if(rightTree == NULL) {
+			rightTree = new BinarySearchTree(val);
+		} else {
+			rightTree->add(val);
+		}
+	} else if (val < root) {
+		if(leftTree == NULL) {
+			leftTree = new BinarySearchTree(val);
+		} else {
+			leftTree->add(val);
+		}
+	}
+}
+
+/*
+ * 递归中序遍历
+ * The way of print the leave from the left to right is the inorder traversal, but no need to print the root
+ */
+
+void BinarySearchTree::inPrderPrint() {
+	if(leftTree != NULL) {
+		leftTree->inPrderPrint();
+	}
+	if(rightTree != NULL) {
+		rightTree->inPrderPrint();
+	}
+	if(leftTree == NULL && rightTree == NULL) {
+		cout << root << " ";
+	}
+}
+

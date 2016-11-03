@@ -1,0 +1,8 @@
+19:17:51 **** Rebuild of configuration Release for project Q34 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o CircleList.o "..\\CircleList.cpp" 
+g++ -O3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Q34.exe CircleList.o main.o 
+
+19:17:52 Build Finished (took 1s.185ms)
+

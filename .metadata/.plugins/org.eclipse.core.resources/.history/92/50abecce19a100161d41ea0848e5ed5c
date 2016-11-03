@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+struct Matrix {
+	int row;
+	int col;
+	int *data;
+	Matrix(){
+		row = -1;
+		col = -1;
+		data = NULL;
+	}
+};
+void print(Matrix *matrix){
+		for(int i = 0; i < matrix->row*matrix->col; i ++) {
+			cout << *(matrix->data + i) << "  ";
+		}
+	}
+	bool flattern(Matrix *matrix){
+		return matrix->row==1&&matrix->col==1;
+	}
+	void add(Matrix *matrix,Matrix *added, Matrix *target) {
+		int *ad = added->data;
+		int *td = target->data;
+		for(int i = 0;i < row*col; i ++) {
+			*(td + i) = *(ad + i) + *(data + i);
+		}
+	}
+	void multiply(Matrix *muled, Matrix *target) {
+		int *md = muled->data;
+		int *td = target->data;
+		for(int i = 0; i < target->row; i ++) {
+			for(int j = 0; j < target->col; j ++) {
+				for(int m = 0; m < row; m ++) {
+					*(td + i*row + col) += ( (*(data + i*row + m))*(*(md + j + m*row)) );
+				}
+			}
+		}
+	}

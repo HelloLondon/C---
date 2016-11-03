@@ -1,0 +1,21 @@
+#include <iostream>
+
+class BinaryTree {
+private :
+	int root;
+	BinaryTree *leftTree;
+	BinaryTree *rightTree;
+	int leftmax;
+	int rightmin;
+public :
+	BinaryTree(int root): root(root), leftTree(NULL), rightTree(NULL),leftmax(0),rightmin(root){};
+	~BinaryTree(){
+		delete leftTree;
+		delete rightTree;
+	};
+	BinaryTree* addLeft(int val);
+	BinaryTree* addRight(int val);
+	bool isBSTree();
+	int height();
+	int getRoot(){return root;};
+};

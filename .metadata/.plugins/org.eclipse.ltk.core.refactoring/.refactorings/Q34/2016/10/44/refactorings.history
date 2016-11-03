@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;Q34/CircleList&apos; to &apos;CircleList.j&apos;" description="Rename resource &apos;CircleList&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="CircleList" name="CircleList.j" stamp="1477726809996" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;Q34/CircleList.j&apos; to &apos;CircleList.h&apos;" description="Rename resource &apos;CircleList.j&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="CircleList.j" name="CircleList.h" stamp="1477726813463" updateReferences="true"/>
+</session>

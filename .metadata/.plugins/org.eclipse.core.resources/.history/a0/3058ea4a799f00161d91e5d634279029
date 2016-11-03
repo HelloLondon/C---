@@ -1,0 +1,42 @@
+#include "tree.h"
+
+int BinaryTree::height() {
+
+	return 0;
+}
+
+bool BinaryTree::add(int val) {
+	if(val == root) {
+		return false;
+	}
+	if(val > root) {
+		if(rightTree == NULL) {
+			rightTree = new BinaryTree(val);
+		} else {
+			if(!rightTree->add(val)){
+				return false;
+			}
+		}
+	} else if (val < root) {
+		if(leftTree == NULL) {
+			leftTree = new BinaryTree(val);
+		} else {
+			if(!leftTree->add(val)){
+				return false;
+			}
+		}
+	}
+}
+
+void BinaryTree::print(ostrstream &os) {
+	os << root;
+	os << "(" ;
+	if(leftTree != NULL) {
+		leftTree->print(os);
+	}
+	os << ",";
+	if(rightTree != NULL) {
+		rightTree->print(os);
+	}
+	os << ")";
+}

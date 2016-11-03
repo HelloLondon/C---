@@ -1,0 +1,13 @@
+#include <iostream>
+
+class BinaryTree {
+private :
+	int root;
+	BinaryTree *leftTree;
+	BinaryTree *rightTree;
+public :
+	BinaryTree(int root): root(root), leftTree(NULL), rightTree(NULL){};
+	Binary addLeft(int val);
+	bool isBSTree();
+	int height();
+};

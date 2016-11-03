@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<item value="true" key="LexicalSortingAction.sort"/>
 	<item value="" key="LastUsedSourceTemplate"/>
+	<item value="Default C++ header template" key="LastUsedHeaderTemplate"/>
 	<section name="org.eclipse.cdt.internal.ui.browser.opentype.OpenTypeActionSettings">
 		<item value="true" key="show_enums"/>
 		<item value="true" key="show_unions"/>

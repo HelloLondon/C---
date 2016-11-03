@@ -1,0 +1,16 @@
+#include "CircleList.h"
+
+void CircleList::add(int data) {
+	datas.push_back(data);
+}
+
+int CircleList::next() {
+	if(it == datas.end()) {
+		it = datas.begin();
+	}else {
+		it++;
+	}
+	return *it;
+}
+
+

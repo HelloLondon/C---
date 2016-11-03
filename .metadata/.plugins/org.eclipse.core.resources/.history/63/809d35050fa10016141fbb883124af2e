@@ -1,0 +1,5 @@
+struct Matrix {
+	int row;
+	int col;
+	int *data;
+};

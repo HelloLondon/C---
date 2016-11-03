@@ -1,0 +1,20 @@
+19:17:47 **** Rebuild of configuration Release for project Q28 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+In file included from e:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\strstream:51:0,
+                 from ..\tree.h:2,
+                 from ..\main.cpp:2:
+e:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+ #warning \
+  ^
+g++ -O3 -Wall -c -fmessage-length=0 -o tree.o "..\\tree.cpp" 
+In file included from e:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\strstream:51:0,
+                 from ..\tree.h:2,
+                 from ..\tree.cpp:1:
+e:\mingw\lib\gcc\mingw32\5.3.0\include\c++\backward\backward_warning.h:32:2: warning: #warning This file includes at least one deprecated or antiquated header which may be removed without further notice at a future date. Please use a non-deprecated interface with equivalent functionality instead. For a listing of replacement headers and interfaces, consult the file backward_warning.h. To disable this warning use -Wno-deprecated. [-Wcpp]
+ #warning \
+  ^
+g++ -o Q28.exe main.o tree.o 
+
+19:17:48 Build Finished (took 1s.40ms)
+

@@ -1,0 +1,61 @@
+#include "tree.h"
+
+/**
+ * Get the height of tree by preorder
+ */
+int BinarySearchTree::height() {
+	int rightHight = 0;
+	int leftHight = 0;
+	if(leftTree != NULL) {
+		leftHight = leftTree->height();
+	}
+	if(rightTree != NULL) {
+		rightHight = rightTree->height();
+	}
+	return 1 + (rightHight > leftHight ?  rightHight : leftHight);
+}
+
+void BinarySearchTree::add(int val) {
+	if(val >= root) {
+		if(rightTree == NULL) {
+			rightTree = new BinarySearchTree(val);
+		} else {
+			rightTree->add(val);
+		}
+	} else if (val < root) {
+		if(leftTree == NULL) {
+			leftTree = new BinarySearchTree(val);
+		} else {
+			leftTree->add(val);
+		}
+	}
+}
+
+int BinarySearchTree::preOrderPrint(ostrstream &os) {
+	os <<  root;
+	int rightHeight = 0;
+	int leftHight = 0;
+	if(leftTree != NULL) {
+		os << " ";
+		leftHight = leftTree->preOrderPrint(os);
+	}
+//	os << ",";
+	if(rightTree != NULL) {
+		os << " ";
+		rightHeight = rightTree->preOrderPrint(os);
+	}
+//	os << ")";
+	return 1 + (rightHeight > leftHight ?  rightHeight : leftHight);
+}
+//递归中序遍历
+void BinarySearchTree::inPrderPrint() {
+	if(leftTree != NULL) {
+		leftTree->inPrderPrint();
+		cout << " ";
+	}
+	cout << root;
+	if(rightTree != NULL) {
+		cout << " ";
+		rightTree->inPrderPrint();
+	}
+}

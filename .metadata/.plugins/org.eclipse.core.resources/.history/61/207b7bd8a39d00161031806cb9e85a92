@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+
+int binarySearch(int *data,int s,int e) {
+	if(s - e == 1) {
+		return data[s] == data[e] ? data[s] : 0;
+	}
+	int cur = (s+e) >> 1;
+	do{
+		int count = 0;
+		for(int i = s; i < e; i ++) {
+			if (cur == data[i]){ count ++;}
+			if(count >= 2) return cur;
+		}
+		int up = binarySearch(data,cur,e);
+		if(up != 0) {
+			return up;
+		}
+		int down = binarySearch(data,s,cur);
+		if(down != 0) {
+			return down;
+		}
+
+	}while(true);
+	return cur;
+}
+
+int main() {
+	int n;
+	cin >> n;
+	int data[n];
+	for(int i = 0; i < n; i ++) {
+		cin >> data[i];
+	}
+	cout << binarySearch(data,1,n);
+
+	return 0;
+}

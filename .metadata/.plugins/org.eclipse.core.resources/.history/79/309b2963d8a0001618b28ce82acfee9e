@@ -1,0 +1,125 @@
+#include "list.h"
+#include <iostream>
+using namespace std;
+
+LinkedList::LinkedList() {
+	start = new ListNode(-1);
+	last = start;
+	start->next = last;
+	size = 0;
+}
+
+
+LinkedList::~LinkedList() {
+	if(start == last) {
+		delete start;
+		return;
+	}
+	ListNode *first = start->next;
+	do{
+		if(first == last) {
+			break;
+		}
+		ListNode *temp = first->next;
+		delete first;
+		first = temp;
+	}while(true);
+	delete start;
+	delete last;
+}
+
+void LinkedList::add(int x) {
+	ListNode *update =  new ListNode(x);
+	if(start == last) {
+		start->next = update;
+	} else {
+		last->next = update ;
+	}
+	last = update;
+	size ++;
+}
+int LinkedList::get(){
+	return last->val;
+}
+
+void LinkedList::remove(int value) {
+	if(size == 0) {
+		return;
+	}
+//	remove(start->next->next->next->next->next);
+	for(ListNode*node = start; ; node = node->next) {
+		if((node->next)->val == value) {
+			remove(node);
+		}
+		if(node->next == BLANK) {
+			return;
+		}
+	}
+}
+
+void LinkedList::remove(ListNode *pre){
+	ListNode *toDelete = pre->next;
+	if(toDelete == last) {
+		last = pre;
+	}
+	pre->next = toDelete->next;
+	delete toDelete;
+	size--;
+}
+
+void LinkedList::insert(int val, int pos) {
+	if(pos < 0){
+		return;
+	}
+	if(pos == size) {
+		add(val);
+		return;
+	}
+	ListNode *toInsert = new ListNode(val);
+	//find the node at pos - 1;
+	ListNode *pre = start;
+	for(int i = 0 ; i < pos; i ++ ){
+		pre = pre->next;
+	}
+	toInsert->next = pre->next;
+	pre->next = toInsert;
+	size++;
+}
+
+void LinkedList::print() {
+	if(size == 0) {
+		return;
+	}
+	for(ListNode*node = start->next; node != last; node = node->next) {
+			cout << node->val << " ";
+	}
+	cout << last->val;
+}
+
+void LinkedList::rotate(int k) {
+	if(k >= size) {
+		k = k - size*(k/size);
+	}
+	if(k <= 0) {
+		return;
+	}
+	ListNode *updateFirstPre = start;
+	for(int i = 0; i < size - k; i ++) {
+		updateFirstPre = updateFirstPre->next;
+	}
+
+	last->next = start->next;
+	last = updateFirstPre;
+	start->next = updateFirstPre->next;
+}
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+private int getLastA() {
+		int result = offset;
+		int count = people.length - 1;
+		do{
+//			people[0] = result;
+			people[result] = -1;
+			count --;
+			if (count == 0) {
+				break;
+			}
+			int i = 0;
+			for (;;) {
+				result ++;
+				if(result  >= people.length) {
+					result = 1;
+				}
+				if (people[result] > 0) {
+					i ++ ;
+				}
+				if (i == offset) {
+					break;
+				}
+			}
+		} while(true);
+		return result;
+	}
+int main() {
+	int n;
+	cin >> n;
+	int start;
+	cin >> start;
+
+
+}

@@ -1,0 +1,10 @@
+#include "tree.h"
+
+int BinaryTree::height() {
+
+	return 0;
+}
+
+void BinaryTree::add(int val) {
+
+}

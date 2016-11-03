@@ -1,0 +1,36 @@
+#include <iostream>
+#include "tree.h"
+#include <string>
+#include <sstream>
+#include <fstream>
+using namespace std;
+
+void binaryMake(int data[] , int start, int end, BinarySearchTree *tree){
+	if(start == end) {
+		tree = new BinarySearchTree(data[end]);
+		return ;
+	}
+
+}
+
+int main() {
+	int data[50000];
+	int length = -1;
+	string input ;
+	getline(cin, input);
+//	ofstream out("D:\\C++Project\\Q31\\out.txt",ios::app);
+//	if(out.is_open()){
+//		out << input << endl;
+//		out.close();
+//	}
+	istringstream is(input);
+	while(is >> data[length + 1]){length ++;};
+	if(length < 0) {
+		return 0;
+	}
+	BinarySearchTree *root = new BinarySearchTree(-1);
+	binaryMake(data, 0, length, root);
+	root->inPrderPrint();
+	return 0;
+}
+

@@ -1,0 +1,17 @@
+#include <iostream>
+struct TreeNode {
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	TreeNode(int val) : val(val) {left=NULL; right = NULL;}
+};
+
+class BinaryTree {
+private :
+	TreeNode *root;
+public :
+	BinaryTree(int root);
+	void add(int val);
+	bool isBSTree();
+	int height();
+};

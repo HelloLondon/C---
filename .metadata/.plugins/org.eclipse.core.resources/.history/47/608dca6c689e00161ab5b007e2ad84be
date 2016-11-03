@@ -1,0 +1,27 @@
+#include "CircleList.h"
+
+void CircleList::add(int data) {
+	datas.push_back(data);
+}
+
+int CircleList::next() {
+	if(size() == 1) {
+		return *datas.begin();
+	}
+	if(it == datas.end()) {
+		it = datas.begin();
+	}else {
+		it++;
+	}
+	return *it;
+}
+
+int CircleList::size() {
+	return datas.size();
+}
+
+void CircleList::remove() {
+	datas.erase(it);
+}
+
+

@@ -1,0 +1,65 @@
+#include <iostream>
+#include "tree.h"
+#include <strstream>
+#include <string>
+#include <sstream>
+#include <cstring>
+using namespace std;
+
+/*
+ * ------------------------测试专用------------------------------
+ */
+void test() {
+	BinaryTree *tree = new BinaryTree(5);
+	tree->add(10);
+	tree->add(2);
+	tree->add(4);
+	tree->add(3);
+	char out[20001];
+	ostrstream os(out,20001);
+	int height = tree->print(os);
+//	os<<50;
+	os<<ends;
+	cout << out << endl;
+	cout << height;
+}
+/*
+ * ------------------------------------------------------------------
+ */
+
+int main() {
+	test();
+////	BinaryTree *head = new BinaryTree(root);
+//	string input;
+//	getline(cin, input);
+//	istringstream is(input);
+//	int data;
+//	is>>data;
+//
+//	BinaryTree *root = new BinaryTree(data);
+//	char ch;
+//	while (is>>ch)
+//	    {
+//	        if (ch>='0'&&ch<='9')
+//	        {
+//	            is.putback(ch);//将ch放回到输入流中，这样后面用is>>i可以完整的读入数字
+//	            is>>data;
+//	            root->add(data);
+////	            if(!root->add(data)) {
+////	            	cout << 0;
+////	            	return 0;
+////	            }
+//	        }
+//	    }
+//	char out[100001];
+//	ostrstream os(out,100001);
+//	root->print(os);
+//	os<<ends;
+////	cout << out << endl;
+//	cout << (strcmp(input.c_str(),out) == 0 ? true:false) ;
+////	string input;
+////	getline(cin,input);
+////	char out[6];
+////	out[0] = 'a';out[1] = 's'; out[2] = '\0';
+////	cout << (strcmp(input.c_str(),out));
+}

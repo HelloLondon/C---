@@ -1,0 +1,17 @@
+#include <vector>
+using namespace std;
+class CircleList {
+private:
+	vector<int> vectors;
+	iterator it;
+public :
+	CircleList(vector<int> vector):vector(vector) {
+		it = vector<int>::this->vector.iterator;
+	}
+	~CircleList(){delete vector;}
+	void add(int data);
+	int next();
+	int size();
+	void remove();
+
+};

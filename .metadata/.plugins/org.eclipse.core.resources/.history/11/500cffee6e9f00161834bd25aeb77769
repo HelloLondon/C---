@@ -1,0 +1,12 @@
+#include "tree.h"
+
+int BinaryTree::height() {
+
+	return 0;
+}
+
+bool BinaryTree::add(int val) {
+	if(!isroot) {
+
+	}
+}

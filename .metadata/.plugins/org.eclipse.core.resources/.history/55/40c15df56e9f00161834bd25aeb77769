@@ -1,0 +1,22 @@
+//#include <iostream>
+#include <strstream>
+using namespace std;
+class BinaryTree {
+private  :
+	int root;
+	BinaryTree *leftTree;
+	BinaryTree *rightTree;
+public:
+	BinaryTree(int root): root(root), leftTree(NULL), rightTree(NULL){};
+	~BinaryTree(){
+		if(leftTree!=NULL){
+			delete leftTree;
+		}
+		if(rightTree!=NULL){
+			delete rightTree;
+		}
+	};
+	int add(int val);
+	int height();
+	void printf(istrstream *is);
+};

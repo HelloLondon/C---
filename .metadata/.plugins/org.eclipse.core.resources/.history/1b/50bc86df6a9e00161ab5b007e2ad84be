@@ -1,0 +1,41 @@
+#include <iostream>
+#include "CircleList.h"
+using namespace std;
+
+int getLast(CircleList &list, int offset) {
+	if(list.size() == 1) {
+		return list.next();
+	}
+	for(int i = 1; i <= offset ; i ++) {
+		list.next();
+	}
+	list.remove();
+	return getLast(list, offset);
+}
+
+int main() {
+	int n;
+	cin >> n;
+	int start;
+	cin >> start;
+
+	CircleList *people = new CircleList(n);
+	for(int i = 1; i < start; i ++) {
+		people->next();
+	}
+//	cout << getLast(*people, 3) - 1;
+	cout << people->here()<<endl;
+	cout << people->next()<<endl;
+	cout << people->here();
+	people->remove();
+//	cout <<endl;
+	cout << people->here();
+//	cout << people->size();
+//	cout << endl;
+	people->next();
+	cout << people->here()<<endl;
+	cout << endl;
+	people->next();
+	cout << people->here()<<endl;
+	delete people;
+}

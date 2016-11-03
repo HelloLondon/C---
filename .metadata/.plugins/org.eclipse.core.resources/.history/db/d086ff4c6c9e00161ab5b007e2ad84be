@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int getLast(CircleList &list, int offset) {
+	if(list.size() == 1) {
+		return list.next();
+	}
+	for(int i = 1; i <= offset ; i ++) {
+		list.next();
+	}
+	list.remove();
+	return getLast(list, offset);
+}
+
+int main() {
+	int n;
+	cin >> n;
+	int start;
+	cin >> start;
+
+
+}

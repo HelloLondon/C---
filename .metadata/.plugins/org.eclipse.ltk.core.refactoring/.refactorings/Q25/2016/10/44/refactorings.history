@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q25/SumZero&apos; to &apos;SumZero.cpp&apos;" description="Rename resource &apos;SumZero&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="SumZero" name="SumZero.cpp" stamp="1477564155445" updateReferences="true"/>
+</session>

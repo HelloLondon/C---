@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+struct Matrix {
+	int row;
+	int col;
+	int *data;
+	void print(){
+		for(int i = 0; i < row*col; i ++) {
+			cout << *(data + i) << "  ";
+		}
+	}
+	bool flattern(){
+		return row==1&&col==1;
+	}
+	void add(int *added, int *target) {
+		for(int i = 0;i < row*col; i ++) {
+			*(target + i) = *(added + i) + *(target + i);
+		}
+	}
+};

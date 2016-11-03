@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Q33/Matrix.h&apos; to &apos;matrix.h&apos;" description="Rename resource &apos;Matrix.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Matrix.h" name="matrix.h" stamp="1478090040753" updateReferences="true"/>
+</session>

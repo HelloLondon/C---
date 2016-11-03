@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+struct Node {
+	int val;
+	Node *next;
+};
+
+void test (int &a, int &b) {
+
+}
+
+int main(){
+	int x = 1;
+	test(x, 10);
+}

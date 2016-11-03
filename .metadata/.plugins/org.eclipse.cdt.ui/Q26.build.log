@@ -1,0 +1,8 @@
+19:17:45 **** Rebuild of configuration Release for project Q26 ****
+Info: Internal Builder is used for build
+g++ -O3 -Wall -c -fmessage-length=0 -o sort.o "..\\sort.cpp" 
+g++ -O3 -Wall -c -fmessage-length=0 -o main.o "..\\main.cpp" 
+g++ -o Q26.exe main.o sort.o 
+
+19:17:46 Build Finished (took 1s.266ms)
+

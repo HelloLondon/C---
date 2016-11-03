@@ -1,0 +1,19 @@
+#include "tree.h"
+
+int BinaryTree::height() {
+
+	return 0;
+}
+
+void BinaryTree::add(int val) {
+	if(val > root) {
+		if(rightTree == NULL) {
+			rightTree = new BinaryTree(val);
+		} else {
+			rightTree->add(val);
+		}
+	} else if (val < root) {
+
+	}
+}
+

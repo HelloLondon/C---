@@ -1,0 +1,46 @@
+#include <iostream>
+using namespace std;
+
+int main(){
+	long n;
+	cin >> n;
+	long num[n];
+	for(int i = 0; i < n ; i ++) {
+		cin >> num[i];
+	}
+	long cache[] = {1,1,1};
+	for (int i = 0 ; i < n-2; i ++) {
+		if(i >= 1) {
+			if (num[i] == num[i - 1]) {
+				continue;
+			}
+		}
+		for (int j = i+1; j < n-1; j ++) {
+			if(j > i+1) {
+				if (num[j] == num[j - 1]) {
+					continue;
+				}
+			}
+			for(int k = j + 1; k < n; k ++ ) {
+				if (k > j + 1) {
+					if (num[i] == num[i - 1]) {
+						continue;
+					}
+				}
+				if (num[i] + num[j] + num[k] == 0) {
+					if (cache[0] + cache[1] + cache[2] == 0) {
+						cout << cache[0] << " " << cache[1] << " " << cache[2] << endl;
+					}
+					cache[0] = num[i];
+					cache[1] = num[j];
+					cache[2] = num[k];
+
+				}
+			}
+		}
+	}
+	if (cache[0] + cache[1] + cache[2] == 0) {
+		cout << cache[0] << " " << cache[1] << " " << cache[2];
+	}
+	return 0;
+}

@@ -1,0 +1,33 @@
+#include <iostream>
+class TreeNode {
+public:
+	int val;
+	TreeNode *left;
+	TreeNode *right;
+	~TreeNode(){
+		if(left != NULL) {
+			delete left;
+		}
+		if(right != NULL) {
+			delete right;
+		}
+	}
+};
+
+class BinaryTree {
+private :
+	int root;
+	TreeNode *leftTree;
+	TreeNode *rightTree;
+public :
+	BinaryTree(int root): root(root), leftTree(NULL), rightTree(NULL){};
+	~BinaryTree(){
+		delete leftTree;
+		delete rightTree;
+	};
+	BinaryTree* addLeft(int val);
+	BinaryTree* addRight(int val);
+	bool isBSTree();
+	int height();
+	int getRoot(){return root;};
+};

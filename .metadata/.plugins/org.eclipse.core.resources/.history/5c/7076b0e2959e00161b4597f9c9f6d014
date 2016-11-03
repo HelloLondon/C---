@@ -1,0 +1,19 @@
+
+
+struct ListNode {
+	int val;
+	ListNode *next;
+	ListNode(int x) :val(x) ,next(nullptr){};
+};
+
+class LinkedList {
+
+private:
+	ListNode *start;
+	int size;
+public:
+	void add(int x);
+	int get();
+
+
+};

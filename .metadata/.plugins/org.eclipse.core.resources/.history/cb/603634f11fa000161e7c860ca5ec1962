@@ -1,0 +1,64 @@
+#include <iostream>
+#include "tree.h"
+#include <strstream>
+#include <string>
+#include <sstream>
+#include <cstring>
+#include <fstream>
+using namespace std;
+
+void makeTree(string preorder, BinaryTree *tree) {
+	istringstream is(preorder);
+	int root ;
+	is >> root;
+	tree->root = root;
+	const char *str = preorder.c_str();
+	int length = preorder.length();
+	int offset = 0;
+	//Find the beginning
+	for(;; offset ++){
+		if(*(str + offset) == '(') break;
+	}
+	int leftEnd = offset + 1;
+	//a pretending stack
+	/* -----------------A stack--------------------- */
+	int count = 1;
+	int cachePTR = leftEnd ;
+	for(;cachePTR < length ; cachePTR ++) {
+		if(*(str + cachePTR) == ','){
+			leftEnd = cachePTR - 1;
+			if(count == 1) {
+				break;
+			}
+		} else if(*(str + cachePTR) == '('){
+			count ++;
+		} else if(*(str + cachePTR) ==')'){
+			count --;
+			if(count == 1){
+				// the final ) , the point is the end location
+				leftEnd = cachePTR;
+				break;
+			}
+		}
+	}
+	//
+	cout << *(str + offset) << "      "  << *(str + leftEnd ) << "    " <<  *(str + length - 1) << endl;
+	int offsetL = leftEnd - offset ;
+	int offsetR = length - leftEnd - 4; //left plus two -> the first node of the right tree
+//	cout << preorder.substr(offset, offset) << endl;
+	cout << preorder.substr(offset + 1,offsetL) << endl;
+	cout << preorder.substr(leftEnd + 2, offsetR) << endl;
+}
+
+
+int main() {
+	string input;
+	getline(cin, input);
+	makeTree(input, new BinaryTree(0));
+//	char out[100001];
+//	ostrstream os(out,100001);
+//	int height = root->print(os);
+//	os<<ends;
+//	cout << out << endl;
+//	cout << height ;
+}
